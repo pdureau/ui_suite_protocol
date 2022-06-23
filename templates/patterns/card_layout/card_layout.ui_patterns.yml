@@ -1,0 +1,30 @@
+card_layout:
+  label: "Card Layout"
+  description: "A layout class for displaying card components in different arrangements. https://protocol.mozilla.org/patterns/templates/card-layout.html"
+  variants:
+    hero:
+      label: Hero (Default)
+      description: Make sure to have one card pattern with large variant.
+    half: Half
+    third: Third
+    quarter: Quarter
+  settings:
+    with_container:
+      label: With container?
+      type: checkboxes
+      default_value: true
+  fields:
+    cards:
+      type: "render"
+      label: "Cards"
+      description: "Renderable cards"
+      preview:
+        - type: pattern_preview
+          id: card
+          variant: large
+        - type: pattern_preview
+          id: card
+        - type: pattern_preview
+          id: card
+        - type: pattern_preview
+          id: card

@@ -1,0 +1,42 @@
+{#
+/**
+ * @file
+ * Styles page template, override this in your theme.
+ */
+#}
+
+{% if styles is not empty %}
+<div class="mzp-l-content mzp-has-sidebar mzp-l-sidebar-left">
+
+<div class="mzp-l-sidebar">
+  <nav class="mzp-c-sidemenu">
+    <h2 class="mzp-c-sidemenu-title">{{ "Available styles"|t }}</h2>
+    <ul>
+        {% for style in styles %}
+        <li>
+        <a href="#{{ style.id }}">{{ style.label }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</div>
+
+
+<div class="mzp-l-main">
+  {% for style in styles %}
+    <h3 id="{{ style.id }}">{{ style.label }}</h3>
+    {% if style.description %}
+    <p>{{ style.description }}</p>
+    {% endif %}
+    {% for id, label in style.options %}
+      {% set style_attributes = create_attribute().addClass(id).addClass(style.previewed_with) %}
+      <p{{ style_attributes }}>{{ label }} (<code>{{ id }}</code>)</p>
+    {% endfor %}
+    <hr>
+  {% endfor %}
+{% endif %}
+
+</div>
+</diV>
+
+

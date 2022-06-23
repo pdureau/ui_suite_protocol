@@ -1,0 +1,17 @@
+{% if variant != '' and variant|lower != 'default' %}
+  {% set attributes = attributes.addClass('mzp-c-call-out-' ~ variant|lower|replace({'_': '-'})) %}
+{% else %}
+  {% set attributes = attributes.addClass('mzp-c-call-out') %}
+{% endif %}
+
+<section{{ attributes }}>
+  <div class="mzp-l-content ">
+    {% if title %}
+    <h{{ heading_level|default(2) }} class="mzp-c-call-out-title">{{ title }}</h{{ heading_level }}>
+    {% endif %}
+    {% if desc %}
+    <p class="mzp-c-call-out-desc">{{ desc }}</p>
+    {% endif %}
+    {{ content }}
+  </div>
+</section>

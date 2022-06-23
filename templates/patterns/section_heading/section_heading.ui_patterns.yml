@@ -1,0 +1,21 @@
+section_heading:
+  label: "Section Heading"
+  description: "Use section headings help organize your page content into sections. https://protocol.mozilla.org/patterns/atoms/section-heading.html"
+  settings:
+    heading_level:
+      type: select
+      label: "Heading level"
+      options:
+        2: h2 (Default)
+        3: h3
+        4: h4
+        5: h5
+        6: h6
+      preview: 2
+  fields:
+    content:
+      type: "render"
+      label: "Content"
+      description: "Heading content "
+      preview:
+        - "#markup": "We’re building a <strong>better</strong> Internet"

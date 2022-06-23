@@ -1,0 +1,47 @@
+newsletter:
+  label: "Newsletter"
+  description: "The standard newsletter subscription form. The standard newsletter subscription form."
+  fields:
+    image:
+      type: "render"
+      label: "Image"
+      description: "Billboard image."
+      preview:
+        - theme: "image"
+          uri: "assets/static/img/newsletter/newsletter-image.png"
+          alt: ""
+    title:
+      type: "text"
+      label: "Title"
+      description: "Newsletter title."
+      preview: Love the Web?
+    tagline:
+      type: "text"
+      label: "Description"
+      description: "Newsletter description."
+      preview: Get the Mozilla newsletter and help us keep it open and free.
+    content:
+      type: "render"
+      label: "Content"
+      description: "Renderable form"
+      preview:
+        - type: html_tag
+          tag: label
+          value: Your email address
+        - type: html_tag
+          tag: input
+          attributes:
+            type: email
+            placeholder: yourname@example.com
+        - "#markup": '<p class="mzp-c-form-submit"><button type="submit" class="mzp-c-button">Sign up now</button><span class="mzp-c-fieldnote">We will only send you Mozilla-related information.</span></p>'
+  settings:
+    heading_level:
+      type: select
+      label: "Heading level"
+      options:
+        2: h2 (Default)
+        3: h3
+        4: h4
+        5: h5
+        6: h6
+      preview: 3

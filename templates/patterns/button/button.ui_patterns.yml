@@ -1,0 +1,52 @@
+button:
+  label: Button
+  description: For actions in forms, dialogs, and more with support for multiple sizes, states, and more. https://protocol.mozilla.org/patterns/atoms/buttons.html
+  variants:
+    primary:
+      label: Primary (Default)
+      description: This is a primary button. It represents the primary action someone should take when they land on any given page. Primary buttons have a solid background color, and should be reserved for only one action per page.
+    primary__dark:
+      label: Primary Dark
+      description: This is a primary button displayed on a dark background.
+    secondary:
+      label: Secondary
+      description: This is a secondary button with a hollow, transparent background. This button should be used for any additional actions someone can take on any given page that is different from the primary action.
+    secondary__dark:
+      label: Secondary Dark
+      description: This is a secondary button displayed on a dark backgroun
+    product:
+      label: Product
+      description: Use this theme style for product related actions.
+    product__secondary:
+      label: Product Secondary
+      description: This secondary button theme should be used when the CTA is not the main action a person should take on a page.
+    neutral:
+      label: Neutral
+      description: This is a neutral button.
+    product__secondary__dark:
+      label: Product Secondary Dark
+    neutral__dark:
+      label: Neutral Dark
+      description: This is a neutral button with the dark theme.
+  fields:
+    label:
+      type: text
+      label: Label
+      description: The button label
+      preview: Submit
+    url:
+      type: text
+      label: URL
+      description: The button URL. Optional.
+      preview: http://example.com
+  settings:
+    size:
+      label: Size
+      description: Buttons can be 4 different sizes, if no size is declared they will be the large size.
+      type: select
+      options:
+        sm: Small
+        md: Medium
+        lg: Large
+        xl: Extra Large
+      default_value: xl

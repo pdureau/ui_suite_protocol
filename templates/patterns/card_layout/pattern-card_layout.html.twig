@@ -1,0 +1,5 @@
+{% set attributes = attributes.addClass('mzp-l-card-' ~ variant|lower|default('hero')) %}
+{% set attributes = with_containers ? attributes.addClass('mzp-l-content') : attributes %}
+<div{{ attributes }}> 
+  {{ cards }}
+</div>

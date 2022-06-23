@@ -1,0 +1,22 @@
+{% if variant != '' and variant|lower != 'default' %}
+  {% set attributes = attributes.addClass('mzp-l-billboard-' ~ variant|lower|replace({'_': '-'})) %}
+{% endif %}
+
+<div{{ attributes.addClass('mzp-c-billboard') }}>
+  <div class="mzp-c-billboard-image-container">
+    {{ image }}
+  </div>
+  <div class="mzp-c-billboard-content">
+    <div class="mzp-c-billboard-content-container">
+      <div class="mzp-c-billboard-content-inner">
+        {% if title %}
+        <h{{ heading_level|default(2) }} class="mzp-c-billboard-title">{{ title }}</h{{ heading_level }}>
+        {% endif %}
+        {% if desc %}
+        <p class="mzp-c-billboard-desc">{{ desc }}</p>
+        {% endif %}
+        {{ cta_link }}
+      </div>
+    </div>
+  </div>
+</div>

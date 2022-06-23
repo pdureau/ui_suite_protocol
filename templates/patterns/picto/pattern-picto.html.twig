@@ -1,0 +1,29 @@
+{% if variant|lower == 'side' %}
+<div class="mzp-t-picto-side">
+{% endif %}
+
+{% if variant|lower == 'center' %}
+<div class="mzp-t-picto-center">
+{% endif %}
+
+{% set heading_level = heading_level|default(3) %}
+
+<section{{ attributes.addClass('mzp-c-picto') }}>
+  {% if image %}
+  <div class="mzp-c-picto-image">
+    {{ image }}
+  </div>
+  {% endif %}
+  <h{{ heading_level }} class="mzp-c-picto-heading">{{ heading }}</h{{ heading_level }}>
+  <div class="mzp-c-picto-body">
+    {{ body }}
+  </div>
+</section>
+
+{% if variant|lower == 'side' %}
+</div>
+{% endif %}
+
+{% if variant|lower == 'center' %}
+</div>
+{% endif %}

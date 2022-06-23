@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * UI Pattern library page template, override this in your theme.
+ */
+#}
+
+{% if patterns is not empty %}
+<div class="mzp-l-content mzp-has-sidebar mzp-l-sidebar-left">
+
+<div class="mzp-l-sidebar">
+  <nav class="mzp-c-sidemenu">
+    <h2 class="mzp-c-sidemenu-title">{{ "Available patterns"|t }}</h2>
+    <ul>
+      {% for pattern_name, pattern in patterns %}
+        <li>
+          <a href="#{{ pattern_name }}">{{ pattern.label }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</div>
+
+<div class="mzp-l-main">
+  {% for pattern_name, pattern in patterns %}
+    <div class="pattern-preview pattern-preview__{{ pattern.definition.id }}">
+      {# Pattern name and description. #}
+      <a name="{{ pattern_name }}"></a>
+      {{ pattern.meta }}
+      {{ pattern.rendered }}
+    </div>
+    <hr>
+  {% endfor %}
+</div>
+
+{% endif %}

@@ -1,0 +1,19 @@
+<section{{ attributes.addClass(['mzp-c-menu-item']) }}>
+  {% if title or desc %}
+  <div class="mzp-c-menu-item-head">
+    {% if title %}
+    <h{{ heading_level|default(4) }} class="mzp-c-menu-item-title">{{ title }}</h{{ heading_level }}>
+    {% endif %}
+    {% if desc %}
+    <p class="mzp-c-menu-item-desc">{{ desc }}</p>
+    {% endif %}
+  </div>
+  {% endif %}
+  {% if items %}
+  <ul class="mzp-c-menu-item-list">
+    {% for item in items %}
+    <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</section>

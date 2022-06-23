@@ -1,0 +1,182 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the ui_suite_bootstrap theme.
+ */
+
+declare(strict_types = 1);
+
+use Drupal\Core\Render\Element;
+
+/**
+ * Add expected class to images.
+ */
+function _ui_suite_protocol_add_image_class(&$item, string $class): void {
+  if (is_array($item) && array_key_exists('#theme', $item)) {
+    if ($item['#theme'] === 'image') {
+      $item['#attributes']['class'][] = $class;
+    }
+    if ($item['#theme'] === 'image_formatter') {
+      $item['#item_attributes']['class'][] =  $class;
+    }
+  }
+  if (is_array($item) && array_key_exists('#type', $item)) {
+    if ($item['#type'] === 'html_tag' && $item['#tag'] === 'img') {
+      $item['#attributes']['class'][] =  $class;
+    }
+  }
+  if (is_array($item)) {
+    foreach ($item as &$next) {
+      _ui_suite_protocol_add_image_class($next, $class);
+    }
+  }
+}
+
+/**
+ * Add theme base path to images.
+ */
+function _ui_suite_protocol_add_image_path($item): array {
+	$base_path = drupal_get_path('theme', 'ui_suite_protocol');
+  if (is_array($item) && array_key_exists('#theme', $item)) {
+    if ($item['#theme'] === 'image') {
+			$uri = isset($item['#uri']) ? implode('/', [
+				'',
+				$base_path,
+				$item['#uri'],
+			]) : '';
+			$item['#uri'] = $uri;
+    }
+	}
+  if (is_array($item) && array_key_exists('#type', $item)) {
+    if (($item['#type'] === 'html_tag') && ($item['#tag'] === 'img')) {
+			$uri = isset($item['#attributes']['src']) ? implode('/', [
+				'',
+				$base_path,
+				$item['#attributes']['src'],
+			]) : '';
+			$item['#attributes']['src'] = $uri;
+    }
+	}
+	return $item;
+}
+
+/**
+ * Add expected class to links.
+ */
+function _ui_suite_protocol_add_link_class(&$item, string $class): void {
+  if (is_array($item) && array_key_exists('#type', $item)) {
+    if ($item['#type'] === 'link') {
+      $item['#attributes']['class'][] = $class;
+    }
+    if ($item['#type'] === 'html_tag' && $item['#tag'] === 'a') {
+      $item['#attributes']['class'][] = $class;
+    }
+  }
+  if (is_array($item)) {
+    foreach ($item as &$next) {
+      _ui_suite_protocol_add_link_class($next, $class);
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for 'pattern_card'.
+ */
+function ui_suite_protocol_preprocess_pattern_card(array &$variables): void {
+  if (array_key_exists('image', $variables) && is_array($variables['image'])) {
+    foreach ($variables['image'] as &$item) {
+      _ui_suite_protocol_add_image_class($item, 'mzp-c-card-image');
+      if ($variables['context']->getType() == 'preview') {
+      	$item = _ui_suite_protocol_add_image_path($item);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for 'pattern_picto'.
+ */
+function ui_suite_protocol_preprocess_pattern_picto(array &$variables): void {
+  if (array_key_exists('image', $variables) && is_array($variables['image'])) {
+    foreach ($variables['image'] as &$item) {
+      if ($variables['context']->getType() == 'preview') {
+      	$item = _ui_suite_protocol_add_image_path($item);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for 'pattern_billboard'.
+ */
+function ui_suite_protocol_preprocess_pattern_billboard(array &$variables): void {
+  if (array_key_exists('image', $variables) && is_array($variables['image'])) {
+    foreach ($variables['image'] as &$item) {
+      _ui_suite_protocol_add_image_class($item, 'mzp-c-billboard-image');
+      if ($variables['context']->getType() == 'preview') {
+      	$item = _ui_suite_protocol_add_image_path($item);
+      }
+    }
+  }
+  if (array_key_exists('cta_link', $variables) && is_array($variables['cta_link'])) {
+    foreach ($variables['cta_link'] as &$item) {
+      _ui_suite_protocol_add_link_class($item, 'mzp-c-cta-link');
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for 'pattern_split'.
+ */
+function ui_suite_protocol_preprocess_pattern_split(array &$variables): void {
+  if (array_key_exists('media', $variables) && is_array($variables['media'])) {
+    foreach ($variables['media'] as &$item) {
+      _ui_suite_protocol_add_image_class($item, 'mzp-c-split-media-asset');
+      if ($variables['context']->getType() == 'preview') {
+      	$item = _ui_suite_protocol_add_image_path($item);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for 'pattern_newsletter'.
+ */
+function ui_suite_protocol_preprocess_pattern_newsletter(array &$variables): void {
+  if (array_key_exists('image', $variables) && is_array($variables['image'])) {
+    foreach ($variables['image'] as &$item) {
+      if ($variables['context']->getType() == 'preview') {
+        	$item = _ui_suite_protocol_add_image_path($item);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function ui_suite_protocol_form_alter(&$form, &$form_state, $form_id) {
+  $form['#attributes']['class'][] = 'mzp-c-form';
+  // Style form buttons like button patterns.
+  if (isset($form['actions'])) {
+    $actions = Element::children($form['actions']);
+    foreach ($actions as $action) {
+      $form['actions'][$action]['#attributes']['class'][] = 'mzp-c-button';
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for 'table'.
+ */
+function ui_suite_protocol_preprocess_table(&$variables) {
+  $variables['attributes']['class'][] = 'mzp-u-data-table';
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for 'input'.
+ */
+function ui_suite_protocol_preprocess_input(&$variables) {
+  // ksm($variables);
+}

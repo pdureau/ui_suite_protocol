@@ -1,0 +1,18 @@
+{% set attributes = (variant == 'download')? attributes.addClass(['mzp-t-cta', 'mzp-t-download']) : attributes %}
+
+<div{{ attributes.addClass('mzp-c-menu-list') }}>
+  {% if title %}
+  <h3 class="mzp-c-menu-list-title">{{ title }}</h3>
+  {% endif %}
+  <ul class="mzp-c-menu-list-list">
+    {% for item in items %}
+    <li class="mzp-c-menu-list-item">
+      <a href="#">{{ item.title }}</a>
+    </li>   
+    {% endfor %}
+  </ul>
+</div>
+
+<script>
+  window.Mzp.Details.init('.mzp-c-menu-list-title');
+</script>

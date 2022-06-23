@@ -1,0 +1,17 @@
+{% if variant != '' and variant|lower != 'primary' %}
+  {% set variants = variant|split('__') %}
+  {% for variant in variants %}
+    {% set attributes = attributes.addClass('mzp-t-' ~ variant|lower|replace({'_': '-'})) %}
+  {% endfor %}
+{% endif %}
+
+{% if size != '' %}
+  {% set attributes = attributes.addClass('mzp-t-' ~ size|lower|replace({'_': '-'})) %}
+{% endif %}
+
+{% if url or attributes.href %}
+  {% set url = url ?: attributes.href %}
+  <a{{ attributes.addClass('mzp-c-button').setAttribute('href', url) }}>{{ label }}</a>
+{% else %}
+  <span{{ attributes.addClass('mzp-c-button') }}>{{ label }}</span>
+{% endif %}

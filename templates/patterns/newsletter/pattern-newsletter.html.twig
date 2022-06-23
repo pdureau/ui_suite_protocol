@@ -1,0 +1,28 @@
+{% if variant != '' and variant|lower != 'default' %}
+  {% set attributes = attributes.addClass('mzp-l-call-out-' ~ variant|lower|replace({'_': '-'})) %}
+{% endif %}
+
+<section{{ attributes.addClass('mzp-c-newsletter') }}>
+  {% if image %}
+  <div class="mzp-c-newsletter-image">{{ image }}</div>
+  {% endif %}
+  
+  <div class="mzp-c-newsletter-form">
+
+    {% if title or tagline %}
+    <header class="mzp-c-newsletter-header">
+      {% if title %}
+      <h3 class="mzp-c-newsletter-title">{{ title }}</h3>
+      {% endif %}
+      {% if title %}
+      <p class="mzp-c-newsletter-tagline">{{ tagline }}</p>
+      {% endif %}
+    </header>
+    {% endif %}
+
+    <div class="mzp-c-newsletter-content">
+    {{ content }}
+    </div>
+
+  </div>
+</section>

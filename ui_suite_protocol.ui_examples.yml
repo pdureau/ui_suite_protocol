@@ -1,0 +1,32 @@
+misc:
+  label: Miscellaneous
+  description: "Some small examples from all around https://protocol.mozilla.org/"
+  render:
+    - "#type": table
+      "#header":
+        0: Column
+        1: Column
+        2: Column
+      "#rows":
+        - [Cell, Cell]
+        - [Cell, Cell]
+        - [Cell, Cell]
+
+billboard:
+  label: Billboard examples
+  description: "Two billboards interspersed with card components. https://protocol.mozilla.org/demos/billboard.html"
+  render:
+    - "#type": pattern_preview
+      "#id": billboard
+    - "#type": pattern
+      "#id": card_layout
+      "#fields":
+        "cards":
+          - "#type": pattern_preview
+            "#id": card
+          - "#type": pattern_preview
+            "#id": card
+      "#variant": half
+    - "#type": pattern_preview
+      "#id": billboard
+      "#variant": left

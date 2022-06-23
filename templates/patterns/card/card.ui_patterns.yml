@@ -1,0 +1,57 @@
+card:
+  label: "Card"
+  description: "https://protocol.mozilla.org/patterns/molecules/card.html"
+  variants:
+    medium:
+      label: Medium (default)
+    large:
+      label: Large
+    small:
+      label: Small
+    extra_small:
+      label: Extra small
+  settings:
+    heading_level:
+      type: select
+      label: "Heading level"
+      options:
+        2: h2 (Default)
+        3: h3
+        4: h4
+        5: h5
+        6: h6
+      preview: 2
+  fields:
+    image:
+      type: "render"
+      label: "Image"
+      description: "Card image."
+      preview:
+        - theme: "image"
+          uri: "assets/card-image.png"
+          alt: ""
+    tag:
+      type: "text"
+      label: "Tag"
+      description: "Card tag. Plain text."
+      preview: Card tag
+    title:
+      type: "text"
+      label: "Title"
+      description: "Card title. Plain text."
+      preview: "This example headline has 40 characters"
+    desc:
+      type: "text"
+      label: "Description"
+      description: "Card description. Plain text."
+      preview: "A description with a maximum of 140 characters. That means we usually only have room for one or two sentences. Here is what that looks like."
+    meta:
+      type: "text"
+      label: "Meta"
+      description: "Card meta. Plain text."
+      preview: "6 hours ago"
+    cta:
+      type: "text"
+      label: "CTA"
+      description: "Card CTA. Plain text."
+      preview: "A short inline text cta"

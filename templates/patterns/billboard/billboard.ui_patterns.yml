@@ -1,0 +1,48 @@
+billboard:
+  label: "Billboard"
+  description: "A billboard style call-out with image, text and link. The image and copy stack vertically on small screens, and run full width horizontally on larger screens. https://protocol.mozilla.org/patterns/organisms/billboard.html"
+  variants:
+    right:
+      label: Right
+    left:
+      label: Left
+  fields:
+    image:
+      type: "render"
+      label: "Image"
+      description: "Billboard image."
+      preview:
+        - theme: "image"
+          uri: "assets/billboard-image.png"
+          alt: ""
+    title:
+      type: "text"
+      label: "Title"
+      description: "Billboard title."
+      preview: Example headline with 35 characters
+    desc:
+      type: "render"
+      label: "Description"
+      description: "Billboard description."
+      preview: A description with a maximum of 100 characters. That usually means only one or two sentences.
+    cta_link:
+      type: "render"
+      label: "CTA link"
+      description: "Billboard CTA link"
+      preview:
+        - type: html_tag
+          tag: a
+          attributes:
+            href: "#"
+          value: Learn more about us
+  settings:
+    heading_level:
+      type: select
+      label: "Heading level"
+      options:
+        2: h2
+        3: h3 (Default)
+        4: h4
+        5: h5
+        6: h6
+      preview: 3

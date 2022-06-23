@@ -1,0 +1,20 @@
+article:
+  label: "Article"
+  description: "A long-form body of text. This is typically multiple paragraphs, often with subheadings, and should be the primary content on the page. https://protocol.mozilla.org/patterns/organisms/article.html"
+  fields:
+    title:
+      type: "text"
+      label: "Title"
+      description: "Article title. Plain text."
+      preview: "We’re building a better Internet"
+    body:
+      type: "render"
+      label: "Body"
+      description: "Article body"
+      preview:
+        - type: html_tag
+          tag: p
+          value: Our mission is to ensure the Internet is a global public resource, open and accessible to all. An Internet that truly puts people first, where individuals can shape their own experience and are empowered, safe and independent.
+        - type: html_tag
+          tag: p
+          value: At Mozilla, we’re a global community of technologists, thinkers and builders working together to keep the Internet alive and accessible, so people worldwide can be informed contributors and creators of the Web. We believe this act of human collaboration across an open platform is essential to individual growth and our collective future.

@@ -1,0 +1,30 @@
+split:
+  label: "Split"
+  description: A full-width page section with text on one side and a single piece of media (an image or video) on the other, hence "split" into two columns. It's highly customizable with a lot of optional classes to support different layout variations.
+  variants:
+    default: Default
+    body_wide: Body Wide
+    reversed: Reversed
+    pop_bottom: Pop bottom
+    nospace: No space
+  fields:
+    body:
+      type: "render"
+      label: "Body"
+      description: "Split body"
+      preview:
+        - type: html_tag
+          tag: h1
+          value: A Headline With 30 Characters
+          attributes:
+            class: ["mzp-u-title-md"]
+        - "#markup": "<p>A description with a maximum of 140 characters and <a href='#'>a link</a>. That means we usually only have room for one or two sentences. Like this.</p>"
+    media:
+      type: "render"
+      label: "Media"
+      description: "Split media"
+      preview:
+        - type: html_tag
+          tag: img
+          attributes:
+            src: assets/static/img/split/devices.png

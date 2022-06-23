@@ -1,0 +1,17 @@
+{% if variant != '' and variant|lower != 'default' %}
+  {% set variants = variant|split('__') %}
+  {% for variant in variants %}
+    {% set attributes = attributes.addClass('mzp-c-split-' ~ variant|lower|replace({'_': '-'})) %}
+  {% endfor %}
+{% endif %}
+
+<section{{ attributes.addClass('mzp-c-split') }}> 
+  <div class="mzp-c-split-container">
+    <div class="mzp-c-split-body ">
+      {{ body }}
+    </div>
+    <div class="mzp-c-split-media ">
+      {{ media }}
+    </div>
+  </div>
+</section>

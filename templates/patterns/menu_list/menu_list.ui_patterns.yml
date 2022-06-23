@@ -1,0 +1,25 @@
+menu_list:
+  label: "Menu List"
+  description: "A sort title, when clicked, expands a list of links. https://protocol.mozilla.org/patterns/molecules/menu-list.html"
+  variants:
+    default:
+      label: Default
+    download:
+      label: Download
+  fields:
+    title:
+      type: text
+      label: Title
+      preview: "Meet the Family"
+    items:
+      type: array
+      label: Menu items
+      preview:
+        - title: Lockwise
+          url: "#"
+        - title: Monitor
+          url: "#"
+        - title: Data
+          url: "#"
+        - title: Slightly longer menu item for testing
+          url: "#"

@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@mozilla-protocol/core": "^16.0.1"
+  }
+}

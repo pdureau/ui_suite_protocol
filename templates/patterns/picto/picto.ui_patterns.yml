@@ -1,0 +1,45 @@
+picto:
+  label: "Picto"
+  description: "A small block of content featuring a pictographic icon, headline, and body. https://protocol.mozilla.org/patterns/molecules/picto.html"
+  variants:
+    default:
+      label: Default
+    side:
+      label: Side
+    center:
+      label: Center
+  fields:
+    image:
+      type: "render"
+      label: "Image"
+      description: "Picto image."
+      preview:
+        - theme: "image"
+          uri: "assets/image.svg"
+          alt: ""
+          attributes:
+            width: 64
+    heading:
+      type: "text"
+      label: "Heading"
+      description: "Picto image. Plain text."
+      preview: "A headline with 30 characters"
+    body:
+      type: "render"
+      label: "Body"
+      description: "A short description, just a sentence or two. Don't use this component for long-form content; it's only for blurbs."
+      preview:
+        - type: html_tag
+          tag: p
+          value: A short description, just a sentence or two. Don't use this component for long-form content; it's only for blurbs.
+  settings:
+    heading_level:
+      type: select
+      label: "Heading level"
+      options:
+        2: h2
+        3: h3 (Default)
+        4: h4
+        5: h5
+        6: h6
+      preview: 3

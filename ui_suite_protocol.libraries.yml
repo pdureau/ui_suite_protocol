@@ -1,0 +1,48 @@
+base:
+  remote: https://protocol.mozilla.org/
+  license:
+    name: MIT
+    gpl-compatible: false
+  js:
+    node_modules/@mozilla-protocol/core/protocol/js/protocol-base.min.js: {}
+    node_modules/@mozilla-protocol/core/protocol/js/protocol-lang-switcher.min.js:
+      {}
+    node_modules/@mozilla-protocol/core/protocol/js/protocol-modal.min.js: {}
+    node_modules/@mozilla-protocol/core/protocol/js/protocol-navigation.min.js:
+      {}
+    node_modules/@mozilla-protocol/core/protocol/js/protocol-sticky-promo.min.js:
+      {}
+    node_modules/@mozilla-protocol/core/protocol/js/protocol-supports.min.js: {}
+  css:
+    theme:
+      node_modules/@mozilla-protocol/core/protocol/css/protocol.min.css:
+        { minified: true }
+    component:
+      node_modules/@mozilla-protocol/core/protocol/css/protocol-components.min.css:
+        { minified: true }
+
+detail:
+  js:
+    node_modules/@mozilla-protocol/core/protocol/js/protocol-details.min.js: {}
+
+menu:
+  js:
+    node_modules/@mozilla-protocol/core/protocol/js/protocol-menu.min.js: {}
+
+sidemenu:
+  js:
+    node_modules/@mozilla-protocol/core/protocol/js/protocol-sidemenu.min.js: {}
+
+notification_bar:
+  js:
+    node_modules/@mozilla-protocol/core/protocol/js/protocol-notification-bar.min.js:
+      {}
+
+footer:
+  js:
+    node_modules/@mozilla-protocol/core/protocol/js/protocol-footer.min.js: {}
+
+newsletter:
+  js:
+    node_modules/@mozilla-protocol/core/protocol/js/protocol-newsletter.min.js:
+      {}

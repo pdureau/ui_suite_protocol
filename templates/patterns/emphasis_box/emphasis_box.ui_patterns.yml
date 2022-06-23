@@ -1,0 +1,15 @@
+emphasis_box:
+  label: "Emphasis box"
+  description: "A visual wrapper used around some CTAs and forms in both marketing and application contexts. https://protocol.mozilla.org/patterns/molecules/emphasis-box.html"
+  fields:
+    content:
+      type: "render"
+      label: "Content"
+      description: "Box content."
+      preview:
+        - type: "html_tag"
+          tag: "h3"
+          value: This is a standard Emphasis Box
+        - type: "html_tag"
+          tag: "p"
+          value: This is some filler content. Cats are the best, every cat.

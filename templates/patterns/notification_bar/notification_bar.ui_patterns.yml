@@ -1,0 +1,22 @@
+notification_bar:
+  label: Notification bar
+  description: Provides contextual feedback messages. https://protocol.mozilla.org/patterns/molecules/notification-bar.html#notification-bar
+  variants:
+    default:
+      label: Default
+    success:
+      label: Success
+    warning:
+      label: Warning
+    error:
+      label: Error
+    click:
+      label: Click
+  fields:
+    message:
+      type: render
+      label: Message
+      description: The alert message.
+      preview: " A simple alert—check it out! "
+  libraries:
+    - ui_suite_protocol/notification_bar
