@@ -11,7 +11,7 @@ card_layout:
   settings:
     with_container:
       label: With container?
-      type: checkboxes
+      type: boolean
       default_value: true
   fields:
     cards:

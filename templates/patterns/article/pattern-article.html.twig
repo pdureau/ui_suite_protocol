@@ -1,25 +1,6 @@
-{% if variant != '' and variant|lower != 'default' %}
-  {% set variants = variant|split('__') %}
-  {% for variant in variants %}
-    {% set attributes = attributes.addClass('mzp-c-card-' ~ variant|lower|replace({'_': '-'})) %}
-  {% endfor %}
-{% endif %}
-
-<section{{ attributes.addClass('mzp-c-details') }}> 
-  <h3>Summary</h3>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing
-    elit. Morbi accumsan neque ipsum. Nunc ligula eros,
-    elementum sit amet blandit eu, egestas at justo.</p>
-  <h3>Heading</h3>
-  <p>Proin in dapibus nulla. Nam vitae est vitae tellus
-    mollis eleifend in eu erat. Vestibulum ante ipsum primis
-    in faucibus orci luctus et ultrices posuere cubilia
-    Curae; Aenean feugiat ante porttitor purus elementum,
-    eget vestibulum ex volutpat. Sed gravida convallis
-    rutrum. Quisque pharetra eros eget malesuada vulputate.
-  </p>
-  <h4>Sub Heading</h4>
-  <p>Cras maximus interdum interdum. Maecenas vitae ligula
-    et eros porta feugiat. Nullam facilisis odio non ante
-    varius tempor ut ac turpis.</p>
-</section>
+<article{{ attributes.addClass('mzp-c-article') }}>
+  {% if title %}
+  <h{{ heading_level|default('1') }} class="mzp-c-article-title">{{ title }}</h{{ heading_level|default('1') }}>
+  {% endif %}
+  {{ content }}
+</article>

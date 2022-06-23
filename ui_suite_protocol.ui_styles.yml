@@ -8,3 +8,10 @@ title:
     mzp-u-title-md: Medium
     mzp-u-title-lg: Large
     mzp-u-title-xl: Extra Large
+
+background_color:
+  label: Background color
+  options:
+    mzp-t-background-secondary: Secondary
+    mzp-t-background-tertiary: Tertiary
+    mzp-t-dark: Dark

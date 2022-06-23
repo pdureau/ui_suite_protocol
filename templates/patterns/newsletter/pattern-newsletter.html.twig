@@ -1,7 +1,3 @@
-{% if variant != '' and variant|lower != 'default' %}
-  {% set attributes = attributes.addClass('mzp-l-call-out-' ~ variant|lower|replace({'_': '-'})) %}
-{% endif %}
-
 <section{{ attributes.addClass('mzp-c-newsletter') }}>
   {% if image %}
   <div class="mzp-c-newsletter-image">{{ image }}</div>

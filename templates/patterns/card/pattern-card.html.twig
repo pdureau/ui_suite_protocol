@@ -6,28 +6,26 @@
 {% endif %}
 
 <section{{ attributes.addClass('mzp-c-card') }}>
-  <a class="mzp-c-card-block-link" href="#">
-    {% if image %}
-    <div class="mzp-c-card-media-wrapper">
-      {{ image }}
-    </div>
+  {% if image %}
+  <div class="mzp-c-card-media-wrapper">
+    {{ image }}
+  </div>
+  {% endif %}
+  <div class="mzp-c-card-content">
+    {% if tag %}
+    <div class="mzp-c-card-tag">{{ tag }}</div>
     {% endif %}
-    <div class="mzp-c-card-content">
-      {% if tag %}
-      <div class="mzp-c-card-tag">{{ tag }}</div>
-      {% endif %}
-      {% if title %}
-      <h{{ heading_level|default('2') }} class="mzp-c-card-title">{{ title }}</h{{ heading_level }}>
-      {% endif %}
-      {% if desc %}
-      <p class="mzp-c-card-desc">{{ desc }}</p>
-      {% endif %}
-      {% if meta %}
-      <p class="mzp-c-card-meta">{{ meta }}</p>
-      {% endif %}
-      {% if cta %}
-      <p class="mzp-c-card-cta"><span class="mzp-c-card-cta-text">{{ cta }}</span></p>
-      {% endif %}
-    </div>
-  </a>
+    {% if title %}
+    <h{{ heading_level|default('2') }} class="mzp-c-card-title">{{ title }}</h{{ heading_level|default('2') }}>
+    {% endif %}
+    {% if desc %}
+    <p class="mzp-c-card-desc">{{ desc }}</p>
+    {% endif %}
+    {% if meta %}
+    <p class="mzp-c-card-meta">{{ meta }}</p>
+    {% endif %}
+    {% if cta %}
+    <p class="mzp-c-card-cta"><span class="mzp-c-card-cta-text">{{ cta }}</span></p>
+    {% endif %}
+  </div>
 </section>

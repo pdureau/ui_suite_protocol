@@ -7,10 +7,10 @@ article:
       label: "Title"
       description: "Article title. Plain text."
       preview: "We’re building a better Internet"
-    body:
+    content:
       type: "render"
-      label: "Body"
-      description: "Article body"
+      label: "Content"
+      description: "Article content"
       preview:
         - type: html_tag
           tag: p
@@ -18,3 +18,15 @@ article:
         - type: html_tag
           tag: p
           value: At Mozilla, we’re a global community of technologists, thinkers and builders working together to keep the Internet alive and accessible, so people worldwide can be informed contributors and creators of the Web. We believe this act of human collaboration across an open platform is essential to individual growth and our collective future.
+  settings:
+    heading_level:
+      type: select
+      label: "Heading level"
+      options:
+        1: h1 (Default)
+        2: h2
+        3: h3
+        4: h4
+        5: h5
+        6: h6
+      preview: 1

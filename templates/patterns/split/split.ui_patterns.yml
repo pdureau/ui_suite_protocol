@@ -3,10 +3,28 @@ split:
   description: A full-width page section with text on one side and a single piece of media (an image or video) on the other, hence "split" into two columns. It's highly customizable with a lot of optional classes to support different layout variations.
   variants:
     default: Default
-    body_wide: Body Wide
     reversed: Reversed
-    pop_bottom: Pop bottom
-    nospace: No space
+    body_wide: Body wide
+    body_wide__reversed: Body wide reversed
+    body_narrow: Body narrow
+    body_narrow__reversed: Body narrow reversed
+    pop_top:
+      label: Pop top
+      description: Huge top padding.
+    pop_top__reversed:
+      label: Pop top reversed
+      description: Huge top padding, reversed.
+    pop_bottom:
+      label: Pop bottom
+      description: Huge bottom padding.
+    pop_bottom__reversed:
+      label: Pop bottom reversed
+      description: Huge bottom padding, reversed.
+  settings:
+    no_space:
+      label: No space?
+      type: boolean
+      default_value: false
   fields:
     body:
       type: "render"
