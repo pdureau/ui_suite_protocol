@@ -1,6 +1,6 @@
-detail:
-  label: "Detail"
-  description: "https://protocol.mozilla.org/patterns/molecules/details.html"
+details:
+  label: "Details"
+  description: "Native details and summary support. https://protocol.mozilla.org/patterns/molecules/details.html"
   fields:
     content:
       type: render
@@ -26,4 +26,4 @@ detail:
           tag: p
           value: Cras maximus interdum interdum. Maecenas vitae ligula et eros porta feugiat. Nullam facilisis odio non ante varius tempor ut ac turpis.
   libraries:
-    - ui_suite_protocol/detail
+    - ui_suite_protocol/details

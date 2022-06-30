@@ -1,19 +1,21 @@
 menu_item:
-  label: Menu item
-  description: A menu item with link, title, description, icon and a list of secondary links. https://protocol.mozilla.org/patterns/molecules/menu.html#menu-item
+  label: (Menu item)
+  description: A menu item with link, title, description, icon and a list of secondary links. To use only in a menu pattern. https://protocol.mozilla.org/patterns/molecules/menu.html#menu-item
   fields:
     title:
       type: text
-      label: Menu item title
+      label: Title
+      description: Menu item title
       preview: " A headline with 30 characters "
     desc:
       type: text
-      label: Menu item description
+      label: Description
+      description: Menu item description
       preview: "This is a short description with only a single sentence and no more."
     items:
       type: render
       label: Menu items
-      description: TODO Drupal structure
+      description: "A nested list of menu items. Each menu item contains: - attributes: HTML attributes for the menu item. - below: The menu item child items. - title: The menu link title. -url: The menu link url"
       preview:
         - title: Home
           url: "#"

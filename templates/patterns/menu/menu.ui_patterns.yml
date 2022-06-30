@@ -1,0 +1,32 @@
+menu:
+  label: "Menu"
+  description: "An expandable menu used in the Navigation organism, consisting of Menu Items and an optional Card molecule. https://protocol.mozilla.org/patterns/molecules/menu.html"
+  fields:
+    title:
+      type: text
+      label: Title
+      preview: "Meet the Family"
+    items:
+      type: array
+      label: Menu items.
+      description: Array of menu items components.
+      preview:
+        - type: pattern_preview
+          id: menu_item
+        - type: pattern_preview
+          id: menu_item
+        - type: pattern_preview
+          id: menu_item
+    card:
+      type: render
+      label: Card
+      description: A card component.
+      preview:
+        type: pattern_preview
+        id: card
+  libraries:
+    - menu_init:
+        js:
+          menu_init.js: {}
+        dependencies:
+          - ui_suite_protocol/menu

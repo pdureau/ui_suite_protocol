@@ -5,7 +5,7 @@ newsletter:
     image:
       type: "render"
       label: "Image"
-      description: "Billboard image."
+      description: "Newsletter image."
       preview:
         - theme: "image"
           uri: "assets/static/img/newsletter/newsletter-image.png"

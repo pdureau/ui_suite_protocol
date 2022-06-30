@@ -11,6 +11,12 @@ misc:
         - [Cell, Cell]
         - [Cell, Cell]
         - [Cell, Cell]
+    - "#theme": item_list
+      "#list_type": ul
+      "#items":
+        - One
+        - Two
+        - Three
 
 billboard:
   label: Billboard examples

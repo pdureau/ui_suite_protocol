@@ -14,6 +14,7 @@ menu_list:
     items:
       type: array
       label: Menu items
+      description: "A nested list of menu items. Each menu item contains: - attributes: HTML attributes for the menu item. - below: The menu item child items. - title: The menu link title. -url: The menu link url"
       preview:
         - title: Lockwise
           url: "#"
@@ -23,3 +24,9 @@ menu_list:
           url: "#"
         - title: Slightly longer menu item for testing
           url: "#"
+  libraries:
+    - menu_list_init:
+        js:
+          menu_list_init.js: {}
+        dependencies:
+          - ui_suite_protocol/details

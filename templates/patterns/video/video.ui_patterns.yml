@@ -1,0 +1,17 @@
+video:
+  label: "Video"
+  description: "A responsive container for embedded video. The video is scaled to the width of its container and maintains its aspect ratio. https://protocol.mozilla.org/patterns/atoms/video.html"
+  fields:
+    content:
+      type: "render"
+      label: "Content"
+      description: "Video renderable content"
+      preview:
+        - type: html_tag
+          tag: video
+          attributes:
+            controls: controls
+            width: 640
+            height: 360
+            poster: "assets/static/img/video/video.jpg"
+            src: "https://protocol.mozilla.org/static/video/video.webm"

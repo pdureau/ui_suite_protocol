@@ -1,0 +1,38 @@
+sidebar_menu:
+  label: Sidebar Menu
+  description: Local navigation for a subset of pages or section of a website, intended to appear in a sidebar adjacent to the main content. It can accommodate multiple categories/sub-sections in a two-level hierarchy with titles corresponding to the top level page of each sub-section. https://protocol.mozilla.org/patterns/organisms/sidebar-menu.html
+  variants:
+    default:
+      label: Default
+    light:
+      label: Light
+    dark:
+      label: Dark
+  fields:
+    brand:
+      type: text
+      label: Brand title
+      description: Your company, product, or project name.
+      preview: "Brand title"
+    items:
+      type: render
+      label: Menu items
+      description: Full-height and lightweight navigation (including support for dropdowns).
+      preview:
+        - title: Home
+          url: "#"
+        - title: Library
+          url: "#"
+          below:
+            - title: Sub 1
+              url: "#"
+            - title: Sub 2
+              url: "#"
+        - title: Data
+    text:
+      type: text
+      label: Text
+      description: Vertically centered strings of text.
+      preview: " Navbar text with an inline element "
+  libraries:
+    - ui_suite_protocol/detail

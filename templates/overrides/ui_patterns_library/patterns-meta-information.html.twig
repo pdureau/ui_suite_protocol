@@ -7,8 +7,6 @@
 
 {% if pattern is not empty %}
 
-  {# Pattern name and description. #}
-  <h2 class="pattern-preview__label"><a href="{{ url('ui_patterns.patterns.single', {'name': pattern.id}) }}">{{ pattern.label }}</a></h2>
   <p class="pattern-preview__description">{{ pattern.description }}</p>
 
   {# Pattern fields descriptions. #}

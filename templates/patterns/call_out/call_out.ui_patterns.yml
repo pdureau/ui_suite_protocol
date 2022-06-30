@@ -10,7 +10,7 @@ call_out:
     image:
       type: "render"
       label: "Image"
-      description: "Billboard image."
+      description: "Call Out image."
       preview:
         - theme: "image"
           uri: "assets/billboard-image.png"
@@ -18,18 +18,18 @@ call_out:
     title:
       type: "text"
       label: "Title"
-      description: "Billboard title."
+      description: "Call Out title."
       preview: Example headline with 35 characters
     desc:
       type: "render"
       label: "Description"
-      description: "Billboard description."
+      description: "Call Out description."
       preview:
         - "#markup": '<p>A description with a maximum of 140 characters and <a href="#">a link</a>. That means we usually only have room for one or two sentences. Like this.</p>'
     content:
       type: "render"
       label: "Content"
-      description: "Free renderable content"
+      description: "Call Out free renderable content"
       preview:
         - type: pattern
           id: button
