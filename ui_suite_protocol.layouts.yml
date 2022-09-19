@@ -1,0 +1,63 @@
+protocol_columns_1:
+  label: "1 column [Protocol]"
+  path: templates
+  template: layout--columns
+  class: '\Drupal\layout_options\Plugin\Layout\LayoutOptions'
+  category: "Columns: 1"
+  default_region: main
+  icon_map:
+    - [main]
+  regions:
+    main:
+      label: Main
+
+protocol_columns_2:
+  label: "2 columns [Protocol]"
+  path: templates
+  template: layout--columns
+  class: '\Drupal\layout_options\Plugin\Layout\LayoutOptions'
+  category: "Columns: 2"
+  default_region: main
+  icon_map:
+    - [main, second]
+  regions:
+    main:
+      label: Main
+    second:
+      label: Second
+
+protocol_columns_3:
+  label: "3 columns [Protocol]"
+  path: templates
+  template: layout--columns
+  class: '\Drupal\layout_options\Plugin\Layout\LayoutOptions'
+  category: "Columns: 3"
+  default_region: main
+  icon_map:
+    - [main, second, third]
+  regions:
+    main:
+      label: Main
+    second:
+      label: Second
+    third:
+      label: Third
+
+protocol_columns_4:
+  label: "4 columns [Protocol]"
+  path: templates
+  template: layout--columns
+  class: '\Drupal\layout_options\Plugin\Layout\LayoutOptions'
+  category: "Columns: 4"
+  default_region: main
+  icon_map:
+    - [main, second, third, fourth]
+  regions:
+    main:
+      label: Main
+    second:
+      label: Second
+    third:
+      label: Third
+    fourth:
+      label: Fourth

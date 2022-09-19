@@ -46,45 +46,49 @@
  */
 #}
 <div class="layout-container mzp-l-content">
+  {{ page.header_logo }}
+  {% if header_logo or header_menu or header_download %}
+    {{ pattern('navigation', {
+    'logo': page.header_logo,
+    'menu': page.header_menu,
+    'download': page.header_download
+  }) }}
+  {% endif %}
 
-  <header role="banner">
-    {{ page.header }}
-  </header>
+  {% set main_attributes = create_attribute({"role": "main", "class": ['mzp-l-content']}) %}
+  {% set main_attributes = page.sidebar_first ? main_attributes.addClass("mzp-has-sidebar", "mzp-l-sidebar-left") : main_attributes%}
+  {% set main_attributes = page.sidebar_second ? main_attributes.addClass("mzp-has-sidebar", "mzp-l-sidebar-right") : main_attributes %}
 
-  {{ page.primary_menu }}
-  {{ page.secondary_menu }}
-
-  {{ page.breadcrumb }}
-
-  {{ page.highlighted }}
-
-  {{ page.help }}
-
-  <main role="main">
+  <main{{ main_attributes }}>
     <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
-    <div class="layout-content">
+    <div class="mzp-l-main">
       {{ page.content }}
     </div>{# /.layout-content #}
 
     {% if page.sidebar_first %}
-      <aside class="layout-sidebar-first" role="complementary">
+      <aside class="mzp-l-sidebar" role="complementary">
         {{ page.sidebar_first }}
       </aside>
     {% endif %}
 
     {% if page.sidebar_second %}
-      <aside class="layout-sidebar-second" role="complementary">
+      <aside class="mzp-l-sidebar" role="complementary">
         {{ page.sidebar_second }}
       </aside>
     {% endif %}
 
   </main>
 
-  {% if page.footer %}
-    <footer role="contentinfo">
-      {{ page.footer }}
-    </footer>
+  {% if footer_logo or footer_sections or footer_language or footer_social or footer_license or footer_terms %}
+    {{ pattern('footer', {
+    'logo': page.footer_logo,
+    'sections': page.footer_sections,
+    'langauge': page.footer_language,
+    'social': page.footer_social,
+    'license': page.footer_license,
+    'terms': page.footer_terms
+  }) }}
   {% endif %}
 
 </div>{# /.layout-container #}

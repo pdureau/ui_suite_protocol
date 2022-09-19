@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Template for columns layout.
+ */
+#}
+{%
+  set classes = [
+    'mzp-l-content',
+    'mzp-l-columns',
+  ]
+%}
+{{ layout.getRegionNames|length }}
+{% set attributes = (layout.getRegionNames|length == 2) ? attributes.addClass('mzp-t-columns-two') : attributes %}
+{% set attributes = (layout.getRegionNames|length == 3) ? attributes.addClass('mzp-t-columns-three') : attributes %}
+{% set attributes = (layout.getRegionNames|length == 4) ? attributes.addClass('mzp-t-columns-four') : attributes %}
+
+{% if content %}
+  <div{{ attributes.addClass(classes) }}>
+    {% for region in layout.getRegionNames %}
+      {% if content[region] %}
+        <div>
+          {{ content[region] }}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}
