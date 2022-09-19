@@ -1,13 +1,19 @@
 card_layout:
   label: "Card Layout"
-  description: "A layout class for displaying card components in different arrangements. https://protocol.mozilla.org/patterns/templates/card-layout.html"
+  description: "A layout class for displaying card components in different arrangements. https://protocol.mozilla.org/components/detail/card-layout--overview.html"
   variants:
     hero:
       label: Hero (Default)
-      description: Make sure to have one card pattern with large variant.
-    half: Half
-    third: Third
-    quarter: Quarter
+      description: Sets up a five-card layout with one large hero card. Make sure to have one card pattern with large variant.
+    half:
+      label: Half
+      description: Sets up a two-column layout so it’s best for even numbers of cards. Use medium sized cards if the container is wide, or small or extra-small cards in narrower containers.
+    third:
+      label: Third
+      description: Sets up a three-column layout so cards should come in multiples of three to avoid empty spaces when cards wrap to new rows. At some medium breakpoints the layout will form two columns and an empty space may be unavoidable. This layout really works best with six cards so it avoids gaps at all widths (two rows of three or three rows of two).
+    quarter:
+      label: Quarter
+      description: Sets up a four-column layout so cards should come in multiples of four to avoid empty spaces when cards wrap to new rows.
   settings:
     with_container:
       label: With container?

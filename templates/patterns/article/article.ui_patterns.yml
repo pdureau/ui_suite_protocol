@@ -1,6 +1,6 @@
 article:
   label: "Article"
-  description: "A long-form body of text. This is typically multiple paragraphs, often with subheadings, and should be the primary content on the page. https://protocol.mozilla.org/patterns/organisms/article.html"
+  description: "A long-form body of text. This is typically multiple paragraphs, often with subheadings, and should be the primary content on the page. https://protocol.mozilla.org/components/detail/article.html"
   fields:
     title:
       type: "text"

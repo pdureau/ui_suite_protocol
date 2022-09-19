@@ -1,10 +1,14 @@
 split:
   label: "Split"
-  description: A full-width page section with text on one side and a single piece of media (an image or video) on the other, hence "split" into two columns. It's highly customizable with a lot of optional classes to support different layout variations.
+  description: A full-width page section with text on one side and a single piece of media (an image or video) on the other, hence "split" into two columns. It's highly customizable with a lot of optional classes to support different layout variations. https://protocol.mozilla.org/components/detail/split--default.html
   variants:
     default: Default
-    reversed: Reversed
-    body_wide: Body wide
+    reversed:
+      label: Reversed
+      description: Orient the body on the right and media on the left (the reverse of the default). It’s automatically reversed in Right-To-Left (RTL) languages.
+    body_wide:
+      label: Wide body
+      description: Make the body 2/3rds width and the media 1/3rd.
     body_wide__reversed: Body wide reversed
     body_narrow: Body narrow
     body_narrow__reversed: Body narrow reversed

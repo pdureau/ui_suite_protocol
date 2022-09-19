@@ -1,6 +1,6 @@
 section_heading:
   label: "Section Heading"
-  description: "Use section headings help organize your page content into sections. https://protocol.mozilla.org/patterns/atoms/section-heading.html"
+  description: "Use section headings help organize your page content into sections. https://protocol.mozilla.org/components/detail/section-heading.html"
   settings:
     heading_level:
       type: select

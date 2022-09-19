@@ -1,6 +1,6 @@
 details:
   label: "Details"
-  description: "Native details and summary support. https://protocol.mozilla.org/patterns/molecules/details.html"
+  description: "Native details and summary support. https://protocol.mozilla.org/components/detail/details.html"
   fields:
     content:
       type: render

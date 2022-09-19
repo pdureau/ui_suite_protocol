@@ -1,6 +1,6 @@
 menu:
   label: "Menu"
-  description: "An expandable menu used in the Navigation organism, consisting of Menu Items and an optional Card molecule. https://protocol.mozilla.org/patterns/molecules/menu.html"
+  description: "An expandable menu used in the Navigation organism, consisting of Menu Items and an optional Card molecule. https://protocol.mozilla.org/components/detail/menu.html"
   fields:
     title:
       type: text

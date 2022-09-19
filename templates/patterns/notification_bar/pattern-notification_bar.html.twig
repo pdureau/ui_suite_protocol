@@ -6,6 +6,8 @@
 {% endif %}
 
 <aside{{ attributes.addClass('mzp-c-notification-bar') }}>
-  <button class="mzp-c-notification-bar-button" type="button">Close notification</button>
+  {% if dismiss %}
+  <button class="mzp-c-notification-bar-button" type="button">{{ "Close notification"|t }}</button>
+  {% endif %}
   {{ message }}
 </aside>

@@ -1,6 +1,6 @@
 card:
   label: "Card"
-  description: "https://protocol.mozilla.org/patterns/molecules/card.html"
+  description: "A Card is a unit of content featuring an image along with a title and description, wrapped in a block-level link. https://protocol.mozilla.org/components/detail/card.html"
   variants:
     medium:
       label: Medium (default)

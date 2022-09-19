@@ -1,6 +1,6 @@
 menu_list:
   label: "Menu List"
-  description: "A sort title, when clicked, expands a list of links. https://protocol.mozilla.org/patterns/molecules/menu-list.html"
+  description: "A sort title, when clicked, expands a list of links. https://protocol.mozilla.org/components/detail/menu-list.html"
   variants:
     default:
       label: Default

@@ -1,23 +1,33 @@
 notification_bar:
   label: Notification bar
-  description: Provides contextual feedback messages. https://protocol.mozilla.org/patterns/molecules/notification-bar.html
+  description: Provides contextual feedback messages. The message should be short, usually a single sentence. The bar can include an optional button to dismiss the notification. https://protocol.mozilla.org/components/detail/notification-bar--default.html
   variants:
     default:
       label: Default
     success:
       label: Success
+      description: A positive notification, to indicate a successful action
     warning:
       label: Warning
+      description: A cautionary notification, to indicate something may be risky but the user can choose to proceed.
     error:
       label: Error
+      description: A negative notification, to indicate an unsuccessful action.
     click:
       label: Click
+      description: To call attention to some action the user should take.
   fields:
     message:
       type: render
       label: Message
       description: The alert message.
       preview: "A simple alert—check it out!"
+  settings:
+    dismiss:
+      type: boolean
+      label: Dismiss?
+      preview: true
+      default_value: 1
   libraries:
     - notification_bar_init:
         js:

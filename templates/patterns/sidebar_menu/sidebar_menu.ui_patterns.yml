@@ -1,6 +1,6 @@
 sidebar_menu:
   label: Sidebar Menu
-  description: Local navigation for a subset of pages or section of a website, intended to appear in a sidebar adjacent to the main content. It can accommodate multiple categories/sub-sections in a two-level hierarchy with titles corresponding to the top level page of each sub-section. https://protocol.mozilla.org/patterns/organisms/sidebar-menu.html
+  description: Local navigation for a subset of pages or section of a website, intended to appear in a sidebar adjacent to the main content. It can accommodate multiple categories/sub-sections in a two-level hierarchy with titles corresponding to the top level page of each sub-section. https://protocol.mozilla.org/components/detail/sidebar-menu.html
   variants:
     default:
       label: Default

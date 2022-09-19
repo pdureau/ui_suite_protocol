@@ -1,6 +1,6 @@
 picto:
   label: "Picto"
-  description: "A small block of content featuring a pictographic icon, headline, and body. https://protocol.mozilla.org/patterns/molecules/picto.html"
+  description: "A small block of content featuring a pictographic icon, headline, and body. https://protocol.mozilla.org/components/detail/picto.html"
   variants:
     default:
       label: Default

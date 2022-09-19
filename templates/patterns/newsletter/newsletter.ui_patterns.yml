@@ -1,6 +1,6 @@
 newsletter:
   label: "Newsletter"
-  description: "The standard newsletter subscription form. The standard newsletter subscription form."
+  description: "The standard newsletter subscription form. The standard newsletter subscription form. https://protocol.mozilla.org/components/detail/newsletter--default.html"
   fields:
     image:
       type: "render"

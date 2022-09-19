@@ -1,6 +1,6 @@
 emphasis_box:
   label: "Emphasis box"
-  description: "A visual wrapper used around some CTAs and forms in both marketing and application contexts. https://protocol.mozilla.org/patterns/molecules/emphasis-box.html"
+  description: "A visual wrapper used around some CTAs and forms in both marketing and application contexts. https://protocol.mozilla.org/components/detail/emphasis-box.html"
   fields:
     content:
       type: "render"

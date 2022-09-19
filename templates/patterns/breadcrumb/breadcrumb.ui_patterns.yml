@@ -1,6 +1,6 @@
 breadcrumb:
   label: Breadcrumb
-  description: A type of navigation menu used to provide a list of links based on current page within the site hierarchy, allowing users to visit previous pages from the current page. https://protocol.mozilla.org/patterns/molecules/breadcrumb.html
+  description: A type of navigation menu used to provide a list of links based on current page within the site hierarchy, allowing users to visit previous pages from the current page. https://protocol.mozilla.org/components/detail/breadcrumb.html
   fields:
     items:
       type: array

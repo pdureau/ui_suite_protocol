@@ -1,6 +1,6 @@
 button:
   label: Button
-  description: For actions in forms, dialogs, and more with support for multiple sizes, states, and more. https://protocol.mozilla.org/patterns/atoms/buttons.html
+  description: For actions in forms, dialogs, and more with support for multiple sizes, states, and more. https://protocol.mozilla.org/components/detail/button--primary.html
   variants:
     primary:
       label: Primary (Default)
@@ -20,11 +20,11 @@ button:
     product__secondary:
       label: Product Secondary
       description: This secondary button theme should be used when the CTA is not the main action a person should take on a page.
+    product__secondary__dark:
+      label: Product Secondary Dark
     neutral:
       label: Neutral
       description: This is a neutral button.
-    product__secondary__dark:
-      label: Product Secondary Dark
     neutral__dark:
       label: Neutral Dark
       description: This is a neutral button with the dark theme.

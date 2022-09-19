@@ -1,6 +1,6 @@
 billboard:
   label: "Billboard"
-  description: "A billboard style call-out with image, text and link. The image and copy stack vertically on small screens, and run full width horizontally on larger screens. https://protocol.mozilla.org/patterns/organisms/billboard.html"
+  description: "A billboard style call-out with image, text and link. The image and copy stack vertically on small screens, and run full width horizontally on larger screens. https://protocol.mozilla.org/components/detail/billboard.html"
   variants:
     right:
       label: Right
