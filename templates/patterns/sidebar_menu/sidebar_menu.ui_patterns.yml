@@ -1,38 +1,29 @@
 sidebar_menu:
   label: Sidebar Menu
-  description: Local navigation for a subset of pages or section of a website, intended to appear in a sidebar adjacent to the main content. It can accommodate multiple categories/sub-sections in a two-level hierarchy with titles corresponding to the top level page of each sub-section. https://protocol.mozilla.org/components/detail/sidebar-menu.html
-  variants:
-    default:
-      label: Default
-    light:
-      label: Light
-    dark:
-      label: Dark
+  description: Local navigation for a subset of pages or section of a website, intended to appear in a sidebar adjacent to the main content. It can accommodate multiple categories/sub-sections in a two-level hierarchy with titles corresponding to the top level page of each sub-section. The menu summary reflects the current page, shown when the menu is collapsed in small viewports. The menu label should be the title of the site section. https://protocol.mozilla.org/components/detail/sidebar-menu.html
   fields:
-    brand:
+    label:
       type: text
-      label: Brand title
-      description: Your company, product, or project name.
-      preview: "Brand title"
+      label: Menu label
+      description: Displayed only when collapsed in small viewports.
+      preview: "Menu label"
     items:
       type: render
       label: Menu items
-      description: Full-height and lightweight navigation (including support for dropdowns).
+      description: "Use the Drupal menu structure. https://api.drupal.org/api/drupal/core!modules!system!templates!menu.html.twig/10.0.x"
       preview:
         - title: Home
           url: "#"
         - title: Library
           url: "#"
+          in_active_trail: true
           below:
             - title: Sub 1
               url: "#"
+              in_active_trail: true
             - title: Sub 2
               url: "#"
         - title: Data
-    text:
-      type: text
-      label: Text
-      description: Vertically centered strings of text.
-      preview: " Navbar text with an inline element "
+          url: "#"
   libraries:
-    - ui_suite_protocol/detail
+    - ui_suite_protocol/sidemenu

@@ -1,10 +1,3 @@
-{% if variant != '' and variant|lower != 'default' %}
-  {% set attributes = attributes.addClass('navbar-' ~ variant|lower|replace({'_': '-'})) %}
-  {% set attributes = attributes.addClass('bg-' ~ variant|lower|replace({'_': '-'})) %}
-{% endif %}
-
-{% import _self as menus %}
-
 <nav{{ attributes.addClass(['mzp-c-sidemenu']) }}>
 
  <section class="mzp-c-sidemenu-summary mzp-js-toggle" aria-controls="sidebar-menu">
@@ -12,31 +5,31 @@
     <h3 class="mzp-c-sidemenu-label"{{ label }}</h3>
     {% endif %}
     
+    {# TODO: get the path to menu item #}
     <ul>
       <li>Menu title</li>
       <li class="mzp-is-current">Menu item one</li>
     </ul>
   </section>
-  
-  {% for item in items %}
-  
-  {% endfor %}
 
   <section class="mzp-c-sidemenu-main" id="sidebar-menu">
-    <h4 class="mzp-c-sidemenu-title"><a href="#">Menu title</a></h4>
-    <ul>
-      <li class="mzp-is-current">
-        <a href="#">Menu item one</a></li>
-      <li><a href="#">Menu item two</a></li>
-      <li><a href="#">Menu item three</a></li>
-    </ul>
-
-    <h4 class="mzp-c-sidemenu-title"><a href="#">Second menu title</a></h4>
-    <ul>
-      <li>
-        <a href="#">This menu item has a longer label that will wrap to a few lines, please don’t do this</a>
-      </li>
-      <li><a href="#">And one more menu item</a></li>
-    </ul>
+    {% for item in items %}
+      <h4 class="mzp-c-sidemenu-title">
+        {% set attributes = item.attributes ? create_attribute(item.attributes) : create_attribute()  %}
+        <a{{ attributes.setAttribute('href', item.url) }}>{{ item.title }}</a>
+      </h4>
+      {% if item.below %}
+      <ul>
+          {% for subitem in item.below %}
+            {% set item_attributes = subitem.in_active_trail ? attributes.addClass("mzp-is-current" ) : create_attribute() %}
+            {% set link_attributes = subitem.attributes ? create_attribute(subitem.attributes) : create_attribute()  %}
+            <li{{ item_attributes }}>
+              <a{{ link_attributes.setAttribute('href', subitem.url) }}>{{ subitem.title }}</a>
+            </li>
+          {% endfor %}
+      </ul>
+      {% endif %}
+      {% endfor %}
   </section>
+
 </nav>

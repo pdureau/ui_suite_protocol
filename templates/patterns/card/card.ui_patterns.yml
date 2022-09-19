@@ -2,14 +2,14 @@ card:
   label: "Card"
   description: "A Card is a unit of content featuring an image along with a title and description, wrapped in a block-level link. https://protocol.mozilla.org/components/detail/card.html"
   variants:
-    medium:
-      label: Medium (default)
-    large:
-      label: Large
-    small:
-      label: Small
     extra_small:
       label: Extra small
+    small:
+      label: Small (default)
+    medium:
+      label: Medium
+    large:
+      label: Large
   settings:
     heading_level:
       type: select
@@ -21,7 +21,21 @@ card:
         5: h5
         6: h6
       preview: 2
+    aspect:
+      type: select
+      label: "Aspect ratio"
+      options:
+        "": "Default"
+        "1-1": "1:1"
+        "3-2": "3:2"
+        "16-9": "16:9"
+      preview: ""
   fields:
+    link:
+      type: "url"
+      label: "Block link"
+      description: "URL of a Web link, which is wrapping the card"
+      preview: "#"
     image:
       type: "render"
       label: "Image"
@@ -33,17 +47,17 @@ card:
     tag:
       type: "text"
       label: "Tag"
-      description: "Card tag. Plain text."
+      description: "Card tag, just one or two words, sometimes with an icon, above the title. Plain text."
       preview: Card tag
     title:
       type: "text"
       label: "Title"
-      description: "Card title. Plain text."
+      description: "Card title. Plain text. One or two lines (about 50 characters max)"
       preview: "This example headline has 40 characters"
     desc:
       type: "text"
       label: "Description"
-      description: "Card description. Plain text."
+      description: "Card description. Plain text. Two or three lines (about 150 characters max)"
       preview: "A description with a maximum of 140 characters. That means we usually only have room for one or two sentences. Here is what that looks like."
     meta:
       type: "text"
