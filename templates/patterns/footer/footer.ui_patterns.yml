@@ -1,0 +1,97 @@
+footer:
+  label: "Footer"
+  description: "A page footer component, containing common links to complement primary navigation and flexible structure. It is best viewed with “full view” as it’s meant to take up the full width of the page. https://protocol.mozilla.org/components/detail/footer.html"
+  fields:
+    logo:
+      type: "render"
+      label: "Logo"
+      description: "Any link put here will be overriden by the Mozilla logo"
+      preview:
+        - type: html_tag
+          tag: a
+          value: Mozilla
+    sections:
+      type: "render"
+      label: "Sections"
+      description: "An array of footer_section patterns."
+      preview:
+        - type: pattern_preview
+          id: footer_section
+        - type: pattern_preview
+          id: footer_section
+        - type: pattern_preview
+          id: footer_section
+        - type: pattern_preview
+          id: footer_section
+        - type: pattern_preview
+          id: footer_section
+        - type: pattern_preview
+          id: footer_section
+    language:
+      type: "render"
+      label: "Language"
+      description: "Placeholder for the language switcher"
+      preview: "[Placeholder for the language switcher]"
+    social:
+      type: "array"
+      label: "Social"
+      description: "Use the Drupal menu structure. https://api.drupal.org/api/drupal/core!modules!system!templates!menu.html.twig/10.0.x"
+      preview:
+        - title: Twitter
+          url: https://twitter.com/firefox
+          attributes:
+            class: [twitter]
+        - title: YouTube
+          url: https://www.youtube.com/firefoxchannel
+          attributes:
+            class: [youtube]
+    license:
+      type: "render"
+      label: "License"
+      description: "Placeholder for the license text"
+      preview:
+        - type: inline_template
+          template: "Visit Mozilla Corporation’s not-for-profit parent, the "
+        - type: html_tag
+          tag: a
+          attributes:
+            href: "https://foundation.mozilla.org/"
+          value: Mozilla Foundation
+        - type: inline_template
+          template: "."
+        - type: html_tag
+          tag: br
+        - type: inline_template
+          template: "Portions of this content are ©1998–2022 by individual mozilla.org contributors."
+        - type: html_tag
+          tag: br
+        - type: inline_template
+          template: "Content available under a "
+        - type: html_tag
+          tag: a
+          attributes:
+            href: "https://www.mozilla.org/foundation/licensing/website-content/"
+            rel: "license"
+          value: "Creative Commons license"
+        - type: inline_template
+          template: "."
+    terms:
+      type: "array"
+      label: "Terms"
+      description: "Use the Drupal menu structure. https://api.drupal.org/api/drupal/core!modules!system!templates!menu.html.twig/10.0.x"
+      preview:
+        - title: Website Privacy Notice
+          url: https://www.mozilla.org/privacy/websites/
+        - title: Cookies
+          url: https://www.mozilla.org/privacy/websites/#cookies
+        - title: Legal
+          url: https://www.mozilla.org/about/legal/
+        - title: Website Privacy Notice
+          url: https://www.mozilla.org/privacy/websites/
+        - title: Cookies
+          url: https://www.mozilla.org/privacy/websites/#cookies
+        - title: Legal
+          url: https://www.mozilla.org/about/legal/
+  libraries:
+    - ui_suite_protocol/details
+    - ui_suite_protocol/footer

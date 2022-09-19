@@ -1,0 +1,64 @@
+<footer{{ attributes.addClass('mzp-c-footer') }}>
+    <div class="mzp-l-content">
+
+        {% if logo or sections %}  
+        <nav class="mzp-c-footer-primary">
+            {% if logo %}  
+            <div class="mzp-c-footer-primary-logo">
+                {{ logo }}
+            </div>
+            {% endif %}
+            {% if sections %} 
+            <div class="mzp-c-footer-sections">
+              {{ sections }}
+            </div>
+            {% endif %}
+        </nav>
+        {% endif %}
+
+        {% if language or social or license or terms %}  
+        <nav class="mzp-c-footer-secondary">
+        
+            {% if language %}
+            <div class="mzp-c-footer-language">
+              {{ language }}
+            </div>
+            {% endif %}
+            
+            {% if social %}
+            <ul class="mzp-c-footer-links-social">
+                {% for item in social %}
+                <li>
+                    {% set attributes = item.attributes ? create_attribute(item.attributes) : create_attribute()  %}
+                    <a{{ attributes.setAttribute('href', item.url) }}>{{ item.title }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            
+            {% if license or terms %}
+            <div class="mzp-c-footer-legal">
+                {% if license %}
+                <p class="mzp-c-footer-license">
+                  {{ license }}
+                </p>
+                {% endif %}
+                {% if terms %}
+                <ul class="mzp-c-footer-terms">
+                    {% for item in terms %}
+                    <li>
+                      {% set attributes = item.attributes ? create_attribute(item.attributes) : create_attribute()  %}
+                      <a{{ attributes.setAttribute('href', item.url) }}>{{ item.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </div>
+            {% endif %}
+            
+        </nav>
+        {% endif %}
+
+    </div>
+</footer>
+

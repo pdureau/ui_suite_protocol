@@ -1,0 +1,26 @@
+footer_section:
+  label: "(Footer section)"
+  description: "To use only in a menu pattern."
+  fields:
+    heading:
+      type: "text"
+      label: "Heading"
+      description: ""
+      preview: "Topic"
+    list:
+      type: "array"
+      label: "List"
+      description: "Use the Drupal menu structure. https://api.drupal.org/api/drupal/core!modules!system!templates!menu.html.twig/10.0.x"
+      preview:
+        - title: Link One
+          url: https://www.mozilla.org/firefox/new/
+        - title: Link Two
+          url: https://www.mozilla.org/firefox/
+        - title: Link Three
+          url: https://www.mozilla.org/firefox/mobile/
+        - title: Link Four
+          url: https://www.mozilla.org/firefox/features/
+        - title: Long link just to mix things up and cause problems.
+          url: https://www.mozilla.org/firefox/channel/desktop/
+        - title: Link Six
+          url: https://www.mozilla.org/firefox/channel/desktop/

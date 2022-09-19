@@ -1,0 +1,38 @@
+navigation:
+  label: "Navigation"
+  description: "Main site Navigation, containing Menu and Secondary Download Button components. https://protocol.mozilla.org/components/detail/navigation--default.html"
+  fields:
+    logo:
+      type: render
+      label: Logo
+      description: A renderable link, automatically replaced by the logo.
+      preview:
+        - type: html_tag
+          tag: a
+          attributes:
+            href: https://www.mozilla.org/
+            value: Mozilla
+    menu:
+      type: render
+      label: Menu
+      description: A menu component.
+      preview:
+        type: pattern_preview
+        id: menu
+    download:
+      type: render
+      label: Download
+      description: A button component.
+      preview:
+        type: pattern
+        id: button
+        variant: product__secondary
+        label: Download firefox
+        size: md
+  libraries:
+    - navigation_init:
+        js:
+          navigation_init.js: {}
+        dependencies:
+          - ui_suite_protocol/menu
+          - ui_suite_protocol/navigation

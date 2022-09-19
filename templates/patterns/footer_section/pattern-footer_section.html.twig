@@ -1,0 +1,15 @@
+<section class="mzp-c-footer-section">
+    <h5 class="mzp-c-footer-heading">
+        {{ heading }}
+    </h5>
+    {% if list %}
+    <ul class="mzp-c-footer-list">
+        {% for item in list %}
+        <li>
+            {% set attributes = item.attributes ? create_attribute(item.attributes) : create_attribute()  %}
+            <a{{ attributes.setAttribute('href', item.url) }}>{{ item.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</section>

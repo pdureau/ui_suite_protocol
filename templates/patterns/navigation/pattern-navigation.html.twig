@@ -1,0 +1,32 @@
+<nav{{ attributes.addClass('mzp-c-navigation') }}>
+    <div class="mzp-c-navigation-l-content">
+        <div class="mzp-c-navigation-container">
+            <button class="mzp-c-navigation-menu-button" type="button" aria-controls="navigation">
+                Menu
+            </button>
+
+            {% if logo %}
+            <div class="mzp-c-navigation-logo">
+                {{ logo }}
+            </div>
+            {% endif %}
+            
+            {% if menu or download %}
+            <div class="mzp-c-navigation-items">
+                {% if menu %}
+                <div class="mzp-c-navigation-menu">
+                    {{ menu }}
+                </div>
+                {% endif %}
+                {% if download %}
+                <div class="mzp-c-navigation-download">
+                  {{ download }}
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+
