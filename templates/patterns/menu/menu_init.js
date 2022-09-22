@@ -1,4 +1,4 @@
-(function() {
-    'use strict';
-    Mzp.Menu.init();
+(function () {
+  'use strict';
+  Mzp.Menu.init();
 })();

@@ -1,4 +1,4 @@
-(function() {
-    'use strict';
-    Mzp.Navigation.init()
+(function () {
+  'use strict';
+  Mzp.Navigation.init();
 })();

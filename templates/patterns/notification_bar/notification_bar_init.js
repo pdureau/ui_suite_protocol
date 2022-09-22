@@ -1,4 +1,4 @@
-(function() {
-    'use strict';
-    Mzp.Notification.init();
+(function () {
+  'use strict';
+  Mzp.Notification.init();
 })();

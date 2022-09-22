@@ -13,7 +13,7 @@ button:
       description: This is a secondary button with a hollow, transparent background. This button should be used for any additional actions someone can take on any given page that is different from the primary action.
     secondary__dark:
       label: Secondary Dark
-      description: This is a secondary button displayed on a dark backgroun
+      description: This is a secondary button displayed on a dark background.
     product:
       label: Product
       description: Use this theme style for product related actions.

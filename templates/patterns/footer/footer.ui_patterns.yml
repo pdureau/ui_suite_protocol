@@ -5,7 +5,7 @@ footer:
     logo:
       type: "render"
       label: "Logo"
-      description: "Any link put here will be overriden by the Mozilla logo"
+      description: "Any link put here will be overridden by the Mozilla logo"
       preview:
         - type: html_tag
           tag: a
