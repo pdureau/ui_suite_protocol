@@ -1,7 +1,7 @@
 name: "UI Suite Protocol"
 type: theme
 description: "A site-builder friendly theme of Mozilla Protocol Design System, using the UI Suite: UI Patterns, UI Styles, Layout Options & UI Examples modules. https://protocol.mozilla.org/"
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^9.3 || ^10
 base theme: false
 dependencies:
   - layout_options:layout_options

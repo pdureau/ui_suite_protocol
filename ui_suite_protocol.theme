@@ -37,7 +37,7 @@ function _ui_suite_protocol_add_image_class(&$item, string $class): void {
  * Add theme base path to media.
  */
 function _ui_suite_protocol_add_media_path($item): array {
-	$base_path = drupal_get_path('theme', 'ui_suite_protocol');
+	$base_path = \Drupal::service('extension.list.theme')->getPath('ui_suite_protocol');
   if (is_array($item) && array_key_exists('#theme', $item)) {
     if ($item['#theme'] === 'image') {
 			$uri = isset($item['#uri']) ? implode('/', [
