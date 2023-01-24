@@ -3,11 +3,14 @@ title:
   label: Heading
   description: A heading acts as a title for the content that immediately follows it. We've declared default sizes for headings in keeping with their standard ranking but this base size can be overridden with more context-specific styling.
   options:
+    mzp-u-title-3xs: Extra Extra Extra Small
+    mzp-u-title-2xs: Extra Extra Small
     mzp-u-title-xs: Extra Small
     mzp-u-title-sm: Small
     mzp-u-title-md: Medium
     mzp-u-title-lg: Large
     mzp-u-title-xl: Extra Large
+    mzp-u-title-2xl: Extra Extra Large
 
 background_color:
   label: Background color
