@@ -1,6 +1,7 @@
 menu_item:
   label: Menu item
   description: A menu item with link, title, description, icon and a list of secondary links. Each Menu Item should have a link destination. To use only in a menu pattern. https://protocol.mozilla.org/components/detail/menu-item.html
+  category: Navigation
   fields:
     title:
       type: text

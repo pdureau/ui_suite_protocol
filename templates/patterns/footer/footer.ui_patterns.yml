@@ -1,6 +1,7 @@
 footer:
   label: "Footer"
   description: "A page footer component, containing common links to complement primary navigation and flexible structure. It is best viewed with “full view” as it’s meant to take up the full width of the page. https://protocol.mozilla.org/components/detail/footer.html"
+  category: Footer
   fields:
     logo:
       type: "render"

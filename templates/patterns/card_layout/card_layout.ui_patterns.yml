@@ -1,6 +1,7 @@
 card_layout:
   label: "Card Layout"
   description: "A layout class for displaying card components in different arrangements. https://protocol.mozilla.org/components/detail/card-layout--overview.html"
+  category: Layout
   variants:
     hero:
       label: Hero (Default)

@@ -1,6 +1,7 @@
 details:
   label: "Details"
   description: "Native details and summary support. https://protocol.mozilla.org/components/detail/details.html"
+  category: Basic
   fields:
     content:
       type: render

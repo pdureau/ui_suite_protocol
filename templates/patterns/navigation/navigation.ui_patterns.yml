@@ -1,6 +1,7 @@
 navigation:
   label: "Navigation"
   description: "Main site Navigation, containing Menu and Secondary Download Button components. https://protocol.mozilla.org/components/detail/navigation--default.html"
+  category: Navigation
   fields:
     logo:
       type: render

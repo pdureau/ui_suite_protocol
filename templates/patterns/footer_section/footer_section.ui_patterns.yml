@@ -1,6 +1,7 @@
 footer_section:
   label: "(Footer section)"
   description: "To use only in a menu pattern."
+  category: Footer
   fields:
     heading:
       type: "text"
