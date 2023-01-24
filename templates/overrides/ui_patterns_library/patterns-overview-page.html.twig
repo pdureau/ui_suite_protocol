@@ -10,19 +10,24 @@
 
 <div class="mzp-l-sidebar">
   <nav class="mzp-c-sidemenu">
-    <h2 class="mzp-c-sidemenu-title">{{ "Available patterns"|t }}</h2>
-    <ul>
-      {% for pattern_name, pattern in patterns %}
-        <li>
-          <a href="#{{ pattern_name }}">{{ pattern.label }}</a>
-        </li>
-      {% endfor %}
-    </ul>
+    {% for group_name, group_patterns in patterns %}
+      {% if patterns|length > 1 %}
+        <h3 class="mzp-c-sidemenu-title">{{ group_name }}</h3>
+      {% endif %}
+      <ul>
+        {% for pattern_name, pattern in group_patterns %}
+          <li>
+            <a href="#{{ pattern_name }}">{{ pattern.label }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
   </nav>
 </div>
 
 <div class="mzp-l-main">
-  {% for pattern_name, pattern in patterns %}
+  {% for group_patterns in patterns %}
+    {% for pattern_name, pattern in group_patterns %}
     <div class="pattern-preview pattern-preview__{{ pattern.definition.id }}">
       {# Pattern name and description. #}
       <h2 class="pattern-preview__label" id="{{ pattern_name }}"><a href="{{ url('ui_patterns.patterns.single', {'name': pattern.definition.id}) }}">{{ pattern.definition.label }}</a></h2>
@@ -30,6 +35,7 @@
       {{ pattern.rendered }}
     </div>
     <hr style="clear: both">
+    {% endfor %}
   {% endfor %}
 </div>
 
