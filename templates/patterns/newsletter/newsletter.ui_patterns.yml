@@ -9,7 +9,6 @@ newsletter:
       preview:
         - theme: "image"
           uri: "assets/static/img/newsletter/newsletter-image.png"
-          alt: ""
     title:
       type: "text"
       label: "Title"

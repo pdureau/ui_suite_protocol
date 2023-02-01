@@ -14,7 +14,6 @@ billboard:
       preview:
         - theme: "image"
           uri: "assets/billboard-image.png"
-          alt: ""
     title:
       type: "text"
       label: "Title"

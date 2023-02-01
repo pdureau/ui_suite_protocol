@@ -43,7 +43,6 @@ card:
       preview:
         - theme: "image"
           uri: "assets/card-image.png"
-          alt: ""
     tag:
       type: "text"
       label: "Tag"

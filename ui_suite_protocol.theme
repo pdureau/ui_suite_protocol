@@ -9,101 +9,37 @@ declare(strict_types = 1);
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
+use Drupal\Core\Template\Attribute;
 
 /**
- * Add expected class to images.
+ * Add a value into the class attributes of a given element.
  *
- * @param mixed $item
- *   The render element.
- * @param string $class
- *   The CSS class to add.
- */
-function _ui_suite_protocol_add_image_class(&$item, string $class): void {
-  if (is_array($item) && array_key_exists('#theme', $item)) {
-    if ($item['#theme'] === 'image') {
-      $item['#attributes']['class'][] = $class;
-    }
-    if ($item['#theme'] === 'image_formatter') {
-      $item['#item_attributes']['class'][] = $class;
-    }
-  }
-  if (is_array($item) && array_key_exists('#type', $item)) {
-    if ($item['#type'] === 'html_tag' && $item['#tag'] === 'img') {
-      $item['#attributes']['class'][] = $class;
-    }
-  }
-  if (is_array($item)) {
-    foreach ($item as &$next) {
-      _ui_suite_protocol_add_image_class($next, $class);
-    }
-  }
-}
-
-/**
- * Add theme base path to media.
+ * Assumes element is an array.
+ * Inspired by: https://www.drupal.org/node/3334294
  *
- * @param mixed $item
- *   The render element.
+ * @param array $element
+ *   An array.
+ * @param string[]|string ...$classes
+ *   The classes to add on element. Arguments can include string keys directly,
+ *   or arrays of string keys.
  *
  * @return array
- *   The modified item.
+ *   The element with the given class(es) in attributes.
  */
-function _ui_suite_protocol_add_media_path($item): array {
-  /** @var array $item */
-  $base_path = \Drupal::service('extension.list.theme')->getPath('ui_suite_protocol');
-  if (is_array($item) && array_key_exists('#theme', $item)) {
-    if ($item['#theme'] === 'image') {
-      $uri = isset($item['#uri']) ? implode('/', [
-        '',
-        $base_path,
-        $item['#uri'],
-      ]) : '';
-      $item['#uri'] = $uri;
+function _ui_suite_material_add_class(array $element, ...$classes): array {
+  if (\array_is_list($element)) {
+    foreach ($element as $index => $item) {
+      if (!\is_array($item)) {
+        continue;
+      }
+      $element[$index] = _ui_suite_material_add_class($item, ...$classes);
     }
+    return $element;
   }
-  if (is_array($item) && array_key_exists('#type', $item)) {
-    if (($item['#type'] === 'html_tag') && ($item['#tag'] === 'img')) {
-      $uri = isset($item['#attributes']['src']) ? implode('/', [
-        '',
-        $base_path,
-        $item['#attributes']['src'],
-      ]) : '';
-      $item['#attributes']['src'] = $uri;
-    }
-    elseif (($item['#type'] === 'html_tag') && ($item['#tag'] === 'video')) {
-      $uri = isset($item['#attributes']['poster']) ? implode('/', [
-        '',
-        $base_path,
-        $item['#attributes']['poster'],
-      ]) : '';
-      $item['#attributes']['poster'] = $uri;
-    }
-  }
-  return $item;
-}
-
-/**
- * Add expected class to links.
- *
- * @param mixed $item
- *   The render element.
- * @param string $class
- *   The CSS class to add.
- */
-function _ui_suite_protocol_add_link_class(&$item, string $class): void {
-  if (is_array($item) && array_key_exists('#type', $item)) {
-    if ($item['#type'] === 'link') {
-      $item['#attributes']['class'][] = $class;
-    }
-    if ($item['#type'] === 'html_tag' && $item['#tag'] === 'a') {
-      $item['#attributes']['class'][] = $class;
-    }
-  }
-  if (is_array($item)) {
-    foreach ($item as &$next) {
-      _ui_suite_protocol_add_link_class($next, $class);
-    }
-  }
+  $attributes = new Attribute($element['#attributes'] ?? []);
+  $attributes->addClass(...$classes);
+  $element['#attributes'] = $attributes->toArray();
+  return $element;
 }
 
 /**
@@ -111,12 +47,7 @@ function _ui_suite_protocol_add_link_class(&$item, string $class): void {
  */
 function ui_suite_protocol_preprocess_pattern_card(array &$variables): void {
   if (array_key_exists('image', $variables) && is_array($variables['image'])) {
-    foreach ($variables['image'] as &$item) {
-      _ui_suite_protocol_add_image_class($item, 'mzp-c-card-image');
-      if ($variables['context']->getType() == 'preview') {
-        $item = _ui_suite_protocol_add_media_path($item);
-      }
-    }
+    $variables['image'] = _ui_suite_material_add_class($variables['image'], 'mzp-c-card-image');
   }
   // Disable link wrapping in layout builder.
   if (array_key_exists('link', $variables) && is_array($variables['link'])) {
@@ -127,34 +58,14 @@ function ui_suite_protocol_preprocess_pattern_card(array &$variables): void {
 }
 
 /**
- * Implements hook_preprocess_HOOK() for 'pattern_picto'.
- */
-function ui_suite_protocol_preprocess_pattern_picto(array &$variables): void {
-  if (array_key_exists('image', $variables) && is_array($variables['image'])) {
-    foreach ($variables['image'] as &$item) {
-      if ($variables['context']->getType() == 'preview') {
-        $item = _ui_suite_protocol_add_media_path($item);
-      }
-    }
-  }
-}
-
-/**
  * Implements hook_preprocess_HOOK() for 'pattern_billboard'.
  */
 function ui_suite_protocol_preprocess_pattern_billboard(array &$variables): void {
   if (array_key_exists('image', $variables) && is_array($variables['image'])) {
-    foreach ($variables['image'] as &$item) {
-      _ui_suite_protocol_add_image_class($item, 'mzp-c-billboard-image');
-      if ($variables['context']->getType() == 'preview') {
-        $item = _ui_suite_protocol_add_media_path($item);
-      }
-    }
+    $variables['image'] = _ui_suite_material_add_class($variables['image'], 'mzp-c-billboard-image');
   }
   if (array_key_exists('cta_link', $variables) && is_array($variables['cta_link'])) {
-    foreach ($variables['cta_link'] as &$item) {
-      _ui_suite_protocol_add_link_class($item, 'mzp-c-cta-link');
-    }
+    $variables['cta_link'] = _ui_suite_material_add_class($variables['cta_link'], 'mzp-c-cta-link');
   }
 }
 
@@ -163,25 +74,8 @@ function ui_suite_protocol_preprocess_pattern_billboard(array &$variables): void
  */
 function ui_suite_protocol_preprocess_pattern_split(array &$variables): void {
   if (array_key_exists('media', $variables) && is_array($variables['media'])) {
-    foreach ($variables['media'] as &$item) {
-      _ui_suite_protocol_add_image_class($item, 'mzp-c-split-media-asset');
-      if ($variables['context']->getType() == 'preview') {
-        $item = _ui_suite_protocol_add_media_path($item);
-      }
-    }
-  }
-}
+    $variables['media'] = _ui_suite_material_add_class($variables['media'], 'mzp-c-split-media-asset');
 
-/**
- * Implements hook_preprocess_HOOK() for 'pattern_newsletter'.
- */
-function ui_suite_protocol_preprocess_pattern_newsletter(array &$variables): void {
-  if (array_key_exists('image', $variables) && is_array($variables['image'])) {
-    foreach ($variables['image'] as &$item) {
-      if ($variables['context']->getType() == 'preview') {
-        $item = _ui_suite_protocol_add_media_path($item);
-      }
-    }
   }
 }
 
@@ -192,7 +86,13 @@ function ui_suite_protocol_preprocess_pattern_video(array &$variables): void {
   if (array_key_exists('content', $variables) && is_array($variables['content'])) {
     foreach ($variables['content'] as &$item) {
       if ($variables['context']->getType() == 'preview') {
-        $item = _ui_suite_protocol_add_media_path($item);
+        $base_path = \Drupal::service('extension.list.theme')->getPath('ui_suite_protocol');
+        $uri = isset($item['#attributes']['poster']) ? implode('/', [
+          '',
+          $base_path,
+          $item['#attributes']['poster'],
+        ]) : '';
+        $item['#attributes']['poster'] = $uri;
       }
     }
   }
@@ -224,4 +124,17 @@ function ui_suite_protocol_preprocess_table(array &$variables): void {
  */
 function ui_suite_protocol_preprocess_item_list(array &$variables): void {
   $variables['attributes']['class'][] = 'mzp-u-list-styled';
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for 'image'.
+ *
+ * Convert relative path to full path.
+ */
+function ui_suite_protocol_preprocess_image(array &$variables): void {
+  $uri = $variables["uri"];
+  $is_absolute = isset(parse_url($uri)['host']) || \str_starts_with($uri, "/") || \str_starts_with($uri, "data:");
+  if (!$is_absolute) {
+    $variables["attributes"]["src"] = base_path() . $variables["directory"] . "/" . $uri;
+  }
 }

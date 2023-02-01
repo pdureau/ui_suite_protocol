@@ -46,7 +46,5 @@ split:
       label: "Media"
       description: "Split media"
       preview:
-        - type: html_tag
-          tag: img
-          attributes:
-            src: assets/static/img/split/devices.png
+        - theme: image
+          uri: assets/static/img/split/devices.png
