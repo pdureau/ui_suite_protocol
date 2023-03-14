@@ -11,6 +11,11 @@ card:
     large:
       label: Large
   settings:
+    link:
+      type: url
+      label: "Block link"
+      description: "URL of a Web link, which is wrapping the card"
+      preview: "#"
     heading_level:
       type: select
       label: "Heading level"
@@ -31,11 +36,6 @@ card:
         "16-9": "16:9"
       preview: ""
   fields:
-    link:
-      type: "url"
-      label: "Block link"
-      description: "URL of a Web link, which is wrapping the card"
-      preview: "#"
     image:
       type: "render"
       label: "Image"

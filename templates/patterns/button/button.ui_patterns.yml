@@ -34,12 +34,12 @@ button:
       label: Label
       description: The button label
       preview: Submit
+  settings:
     url:
-      type: text
+      type: url
       label: URL
       description: The button URL. Optional.
       preview: http://example.com
-  settings:
     size:
       label: Size
       description: Buttons can be 4 different sizes, if no size is declared they will be the large size.
