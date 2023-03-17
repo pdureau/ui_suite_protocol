@@ -1,5 +1,5 @@
 card_layout:
-  label: "Card Layout"
+  label: "Card layout"
   description: "A layout class for displaying card components in different arrangements. https://protocol.mozilla.org/components/detail/card-layout--overview.html"
   category: Layout
   variants:

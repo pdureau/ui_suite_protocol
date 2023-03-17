@@ -1,5 +1,5 @@
 call_out:
-  label: "Call Out"
+  label: "Call out"
   description: "A vertical call out section containing a logo, headline, description and a call-to-action button. https://protocol.mozilla.org/components/detail/call-out.html"
   variants:
     default:

@@ -1,5 +1,5 @@
 section_heading:
-  label: "Section Heading"
+  label: "Section heading"
   description: "Use section headings help organize your page content into sections. https://protocol.mozilla.org/components/detail/section-heading.html"
   settings:
     heading_level:

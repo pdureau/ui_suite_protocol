@@ -20,7 +20,7 @@ misc:
 
 billboard:
   label: Billboard examples
-  description: "Two billboards interspersed with card components. https://protocol.mozilla.org/demos/billboard.html"
+  description: "Two billboards interspersed with card components. https://protocol.moz.works/demos/billboard.html"
   render:
     - "#type": pattern_preview
       "#id": billboard
