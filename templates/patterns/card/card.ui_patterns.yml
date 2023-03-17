@@ -41,8 +41,8 @@ card:
       label: "Image"
       description: "Card image."
       preview:
-        - theme: "image"
-          uri: "assets/card-image.png"
+        theme: "image"
+        uri: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAADIAQMAAABoEU4WAAAAA1BMVEXt7fBQLQGUAAAAHklEQVRYw+3BMQEAAADCIPunNsReYAAAAAAAAAAQHB54AAEGlim3AAAAAElFTkSuQmCC"
     tag:
       type: "text"
       label: "Tag"

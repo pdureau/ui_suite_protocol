@@ -8,11 +8,11 @@ navigation:
       label: Logo
       description: A renderable link, automatically replaced by the logo.
       preview:
-        - type: html_tag
-          tag: a
-          attributes:
-            href: https://www.mozilla.org/
-            value: Mozilla
+        type: html_tag
+        tag: a
+        attributes:
+          href: https://www.mozilla.org/
+        value: Mozilla
     menu:
       type: render
       label: Menu

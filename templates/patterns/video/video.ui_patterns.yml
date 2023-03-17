@@ -7,11 +7,11 @@ video:
       label: "Content"
       description: "Video renderable content"
       preview:
-        - type: html_tag
-          tag: video
-          attributes:
-            controls: controls
-            width: 640
-            height: 360
-            poster: "assets/static/img/video/video.jpg"
-            src: "https://protocol.mozilla.org/static/video/video.webm"
+        type: html_tag
+        tag: video
+        attributes:
+          controls: controls
+          width: 640
+          height: 360
+          poster: "assets/static/img/video/video.jpg"
+          src: "https://protocol.mozilla.org/static/video/video.webm"

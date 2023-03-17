@@ -12,8 +12,8 @@ billboard:
       label: "Image"
       description: "Billboard image."
       preview:
-        - theme: "image"
-          uri: "assets/billboard-image.png"
+        theme: "image"
+        uri: "assets/billboard-image.png"
     title:
       type: "text"
       label: "Title"
@@ -29,11 +29,11 @@ billboard:
       label: "CTA link"
       description: "Billboard CTA link"
       preview:
-        - type: html_tag
-          tag: a
-          attributes:
-            href: "#"
-          value: Learn more about us
+        type: html_tag
+        tag: a
+        attributes:
+          href: "#"
+        value: Learn more about us
   settings:
     heading_level:
       type: select

@@ -8,9 +8,9 @@ footer:
       label: "Logo"
       description: "Any link put here will be overridden by the Mozilla logo"
       preview:
-        - type: html_tag
-          tag: a
-          value: Mozilla
+        type: html_tag
+        tag: a
+        value: Mozilla
     sections:
       type: "render"
       label: "Sections"

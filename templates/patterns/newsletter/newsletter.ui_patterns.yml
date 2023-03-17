@@ -7,8 +7,8 @@ newsletter:
       label: "Image"
       description: "Newsletter image."
       preview:
-        - theme: "image"
-          uri: "assets/static/img/newsletter/newsletter-image.png"
+        theme: "image"
+        uri: "assets/static/img/newsletter/newsletter-image.png"
     title:
       type: "text"
       label: "Title"

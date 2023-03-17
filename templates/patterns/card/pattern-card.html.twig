@@ -5,10 +5,7 @@
 {% set attributes = aspect ? attributes.addClass('mzp-has-aspect-' ~ aspect) : attributes %}
 
 <section{{ attributes.addClass('mzp-c-card') }}>
-  {% if link and _layout_builder %}
-    {{ "Block wrapper link"|t }}: {{ link }}
-  {% endif %}
-  {% if link and not _layout_builder %}
+  {% if link %}
     <a class="mzp-c-card-block-link" href="{{ link }}">
   {% endif %}
   {% if image %}
@@ -33,7 +30,7 @@
     <p class="mzp-c-card-cta"><span class="mzp-c-card-cta-text">{{ cta }}</span></p>
     {% endif %}
   </div>
-  {% if link and not _layout_builder %}
+  {% if link %}
     </a>
   {% endif %}
 </section>

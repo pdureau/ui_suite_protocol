@@ -12,9 +12,9 @@ call_out:
       label: "Image"
       description: "Call Out image."
       preview:
-        - theme: "image"
-          uri: "assets/billboard-image.png"
-          alt: ""
+        theme: "image"
+        uri: "assets/billboard-image.png"
+        alt: ""
     title:
       type: "text"
       label: "Title"

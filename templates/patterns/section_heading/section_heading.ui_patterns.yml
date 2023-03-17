@@ -18,4 +18,4 @@ section_heading:
       label: "Content"
       description: "Heading content "
       preview:
-        - "#markup": "We’re building a <strong>better</strong> Internet"
+        "#markup": "We’re building a <strong>better</strong> Internet"

@@ -14,11 +14,11 @@ picto:
       label: "Image"
       description: "Picto image."
       preview:
-        - theme: "image"
-          uri: "assets/image.svg"
-          alt: ""
-          attributes:
-            width: 64
+        theme: "image"
+        uri: "assets/image.svg"
+        alt: ""
+        attributes:
+          width: 64
     heading:
       type: "text"
       label: "Heading"
@@ -29,9 +29,9 @@ picto:
       label: "Body"
       description: "A short description, just a sentence or two. Don't use this component for long-form content; it's only for blurbs."
       preview:
-        - type: html_tag
-          tag: p
-          value: A short description, just a sentence or two. Don't use this component for long-form content; it's only for blurbs.
+        type: html_tag
+        tag: p
+        value: A short description, just a sentence or two. Don't use this component for long-form content; it's only for blurbs.
   settings:
     heading_level:
       type: select

@@ -46,5 +46,5 @@ split:
       label: "Media"
       description: "Split media"
       preview:
-        - theme: image
-          uri: assets/static/img/split/devices.png
+        theme: image
+        uri: assets/static/img/split/devices.png

@@ -52,7 +52,7 @@ function ui_suite_protocol_preprocess_pattern_card(array &$variables): void {
   // Disable link wrapping in layout builder.
   if (array_key_exists('link', $variables) && is_array($variables['link'])) {
     if (array_key_exists('layout_builder_add_block', $variables['link'])) {
-      $variables['_layout_builder'] = TRUE;
+      unset($variables['link']);
     }
   }
 }
@@ -76,25 +76,6 @@ function ui_suite_protocol_preprocess_pattern_split(array &$variables): void {
   if (array_key_exists('media', $variables) && is_array($variables['media'])) {
     $variables['media'] = _ui_suite_material_add_class($variables['media'], 'mzp-c-split-media-asset');
 
-  }
-}
-
-/**
- * Implements hook_preprocess_HOOK() for 'pattern_video'.
- */
-function ui_suite_protocol_preprocess_pattern_video(array &$variables): void {
-  if (array_key_exists('content', $variables) && is_array($variables['content'])) {
-    foreach ($variables['content'] as &$item) {
-      if ($variables['context']->getType() == 'preview') {
-        $base_path = \Drupal::service('extension.list.theme')->getPath('ui_suite_protocol');
-        $uri = isset($item['#attributes']['poster']) ? implode('/', [
-          '',
-          $base_path,
-          $item['#attributes']['poster'],
-        ]) : '';
-        $item['#attributes']['poster'] = $uri;
-      }
-    }
   }
 }
 
